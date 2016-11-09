@@ -269,7 +269,14 @@ In "normal mode"
 \bs : horizontal split screen buffer browser
 q   : exit
 
+-------------- *airline*
+tabline
+:bn     跳下一個buffer
+:bp     往上一個buffer
+:b n    跳往第n個buffer
+:bd     關掉目前buffer
 
+    
 -------------- *MiniBufExplorer*
 :bn   打開當前buffer的下一個buffer
 :bp   打開當前buffer的前一個buffer

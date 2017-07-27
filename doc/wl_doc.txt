@@ -57,6 +57,11 @@ when press \ + Space, insert white spec at cursor. >
     nmap \<SPACE>  i<SPACE><ESC>
 <
 
+Close quickFix window when press 'enter' >
+ In .vimrc
+    autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
+<
+
 diff a.file b.file >
     $ vim FILE_LEFT
     :vertical diffsplit FILE_RIGHT
@@ -353,6 +358,13 @@ Source Explorer     自動顯示定義
 -------------- *Mark*
 \m              highlight selected word
 :MarkClear      clear all mark
+
+
+-------------- *vbookmark*
+mm  用於設定或者刪除一個書籤，或者使用命令 VbookmarkToggle
+mn  用於跳轉到下一個書籤，或者使用命令 VbookmarkNext
+mp  用於跳轉到前一個書籤，或者使用命令 VbookmarkPrevious
+ma  用於刪除所有書籤，或者使用命令 VbookmarkClearAll
 
 
 -------------- *DrawIt*

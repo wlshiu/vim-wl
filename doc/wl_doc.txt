@@ -199,6 +199,23 @@ step 1. 建立搜尋file list (generate cscope.files)
 setp 2. 開始建立索引 cscope.out
     :cscope -bkq -i cscope.files
 
+-------------- *gj + idutils*
+install idutils
+$ sudo apt-get install id-utils  # Debian / Ubuntu
+
+$ gj -i         # generate ID database 
+
+\g : Find all occurence of the symbol under the cursor.
+\G : Find all possible declarations or definitions.
+\d : Find all possible definitions based on the debug info in ELF binaries. (much less results)
+
+In quickFix window
+q : close quickFix window
+s : open file horizonally and switch window
+v : open file vertically and switch window
+gv: open file vertically
+go: open file
+
 -------------- *EasyGrep*
 將在文件中搜索當前光標下的單詞 >
     \vv
@@ -223,6 +240,7 @@ Grep也可以帶參數, 比如:Grep -ir word, r表示遞歸目錄. i表示不區
 打開選項菜單 >
     \vo or :GrepOptions
 <
+
 -------------- *A.vim*
 開啟對應的 header file
 :A      切換到 h file

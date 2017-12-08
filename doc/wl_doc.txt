@@ -1,4 +1,4 @@
-*wl_doc.txt*    For Vim version 7.3.
+﻿*wl_doc.txt*    For Vim version 7.3.
 
     My Note
 ==============================================================================
@@ -10,6 +10,8 @@ Contents
 
 ==============================================================================
 SHELL CMD                                   *shell-cmd*
+
+:%!astyle       用 astyle 格式化目前檔案
 
 :Ex             開啟目錄瀏覽器，注意首字母E是大寫的
 
@@ -105,7 +107,7 @@ HOTKEY                                       *hotkey*
 -------------- *區塊註解*
 於控制選項(ESC下), 游標移動至要註解的開頭第一個字
 按Ctrl-V, 接著往下選取要註解的區塊
-按大寫I插入. 插入註解符號(如’, //, #)
+按大寫I插入. 插入註解符號(如』, //, #)
 最後, 按Esc, 返回控制選項
 ps. windows環境下, 需先取消預設 hotkey ctrl-v = 貼上 (unmap <C-V> in _vimrc)
 
@@ -199,6 +201,32 @@ step 1. 建立搜尋file list (generate cscope.files)
 setp 2. 開始建立索引 cscope.out
     :cscope -bkq -i cscope.files
 
+-------------- *gtags, gnu-global*
+:cs add GTAGS
+
+my hot key >
+    <C-\>] = :Gtags -r <C-R>=expand("<cword>")<CR><CR>
+    <C-\>' :Gtags -s <C-R>=expand("<cword>")<CR><CR>
+<
+
+tab key 可以自動補全函數 >
+    :Gtags func_name     " 打開函數瀏覽
+    :Gtags -r func_name  " search reference func_name
+    :Gtags -s func_name  " search symbol definition
+<
+
+search word of cursor >
+    :GtagsCursor
+<
+
+At project root directory >
+    $ gtags -f cscope.files
+<
+
+reflash database >
+    $ global -u
+<
+
 -------------- *gj + idutils*
 install idutils
 $ sudo apt-get install id-utils  # Debian / Ubuntu
@@ -240,6 +268,13 @@ Grep也可以帶參數, 比如:Grep -ir word, r表示遞歸目錄. i表示不區
 打開選項菜單 >
     \vo or :GrepOptions
 <
+
+-------------- *tagbar.vim*
+let g:tagbar_iconchars = ['>', 'v']
+
++ 表示該類是 public 
+- 表示一個 private
+# 則是表示一個 protected
 
 -------------- *A.vim*
 開啟對應的 header file
@@ -423,8 +458,8 @@ I set <leader> to ','
 <leader>st      until do done
 <leader>sw      while do done
 <leader>sfu     function
-<leader>se      echo ­e “\n”
-<leader>sp      printf “\n”
+<leader>se      echo ­e 「\n」
+<leader>sp      printf 「\n」
 <leader>hh      syntax help
 
 -------------- *DrawIt*

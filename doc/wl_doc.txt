@@ -1,4 +1,4 @@
-﻿*wl_doc.txt*    For Vim version 7.3.
+*wl_doc.txt*    For Vim version 7.3.
 
     My Note
 ==============================================================================
@@ -212,7 +212,7 @@ my hot key >
 tab key 可以自動補全函數 >
     :Gtags func_name     " 打開函數瀏覽
     :Gtags -r func_name  " search reference func_name
-    :Gtags -s func_name  " search symbol definition
+    :Gtags -s func_name  " search symbol definition"
 <
 
 search word of cursor >
@@ -244,6 +244,13 @@ v : open file vertically and switch window
 gv: open file vertically
 go: open file
 
+-------------- *vimgrep*
+recursive search >
+    :vimgrep /{pattern}/j **/*.c
+    or
+    \g
+<
+
 -------------- *EasyGrep*
 將在文件中搜索當前光標下的單詞 >
     \vv
@@ -272,7 +279,7 @@ Grep也可以帶參數, 比如:Grep -ir word, r表示遞歸目錄. i表示不區
 -------------- *tagbar.vim*
 let g:tagbar_iconchars = ['>', 'v']
 
-+ 表示該類是 public 
++ 表示該類是 public
 - 表示一個 private
 # 則是表示一個 protected
 
@@ -413,6 +420,19 @@ Source Explorer     自動顯示定義
 :MarkClear      clear all mark
 
 -------------- *ack.vim*
+※use ag.exe
+configure >
+    let g:ackprg = 'ag --nogroup --column --nocolor'
+    map <Leader>ag :Ack <C-R>=expand("<cword>")<CR><CR>
+<
+
+hot key >
+    move cursor and type
+    \ag
+<
+
+※use ack perl version:
+
 需要先安裝 ack pack (perl)
     https://beyondgrep.com/documentation/
 

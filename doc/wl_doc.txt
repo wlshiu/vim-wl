@@ -252,13 +252,6 @@ plug-in management
     :help vim-plug
 <
 
--------------- *vimgrep*
-recursive search >
-    :vimgrep /{pattern}/j **/*.c
-    or
-    \g
-<
-
 安裝插件 >
     PlugInstall [name ...] [#threads]
 <
@@ -287,6 +280,12 @@ recursive search >
     PlugSnapshot[!] [output path]
 <
 
+-------------- *vimgrep*
+recursive search >
+    :vimgrep /{pattern}/j **/*.c
+    or
+    \g
+<
 
 -------------- *EasyGrep*
 將在文件中搜索當前光標下的單詞 >

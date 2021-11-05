@@ -246,12 +246,47 @@ v : open file vertically and switch window
 gv: open file vertically
 go: open file
 
+-------------- *vim-plug *
+plug-in management
+可在 vim 查看幫助文件 >
+    :help vim-plug
+<
+
 -------------- *vimgrep*
 recursive search >
     :vimgrep /{pattern}/j **/*.c
     or
     \g
 <
+
+安裝插件 >
+    PlugInstall [name ...] [#threads]
+<
+
+安裝或更新插件 >
+    PlugUpdate [name ...] [#threads]
+<
+
+刪除未列出的插件(爆版清除沒有提示) >
+    PlugClean[!]
+<
+
+升級 vim-plug 自己 >
+    PlugUpgrade
+<
+
+檢查插件狀態 >
+    PlugStatus
+<
+
+檢查之前更新的更改和等待的更改 >
+    PlugDiff
+<
+
+生成腳本以還原目前插件的快照 >
+    PlugSnapshot[!] [output path]
+<
+
 
 -------------- *EasyGrep*
 將在文件中搜索當前光標下的單詞 >

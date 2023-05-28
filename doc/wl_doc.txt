@@ -19,6 +19,8 @@ SHELL CMD                                   *shell-cmd*
 
 :ls             顯示當前buffer的情況
 
+:e <file path>  在 vim 中, 開啟檔案 (若不存在, 會新增檔案)
+
 :cd ..          進入父目錄
 
 :args           顯示目前打開的文件
@@ -41,15 +43,24 @@ SHELL CMD                                   *shell-cmd*
 
 $ fg            go back to vim in console
 
-:%s/\r//g       取代字尾 ^M 字符 >
+搜尋及取代 >
+
+    :%s/search_from/replace_to/g        搜尋字串並取代
+
+    :%s/search_from/replace_to/gc       在取代前, 逐一確認是否取代 (加一個 'c')
+    replace with qqqqqq (y/n/a/q/l/^E/^Y)?
+
+    :%s/search_from/replace_to/gi       搜尋字串並取代時, 略過大小寫的差異 (加一個 'i')
+
+    :10,50s/search_from/replace_to/g    取代指定行數範圍的字串, 例如要取代 10 ~ 50 行的字串
+
+    :%s/\r//g           取代字尾 ^M 字符
     nmap \dm <Esc>:%s/\r//g <CR>
-<
 
-:%s/\s\+$//g    刪除字尾空白 >
+    :%s/\s\+$//g        刪除字尾空白
     nmap \de <Esc>:%s/\s\+$//g <CR>
-<
 
-replace pre-existing tabs >
+    :retab             用空白取代 tab
     nmap \rt <Esc>:retab <CR>
 <
 
@@ -431,9 +442,9 @@ ex.
 
 對齊宣告參數
     \acom : align comments
-	\adec : align C declarations (one variable per line)
-	\afnc : align ansi-style C function input arguments
-	\Htd  : align html tables
+    \adec : align C declarations (one variable per line)
+    \afnc : align ansi-style C function input arguments
+    \Htd  : align html tables
 
     一樣用 visual mode 選取想要對齊的區域，輸入 \acom or \adec
 

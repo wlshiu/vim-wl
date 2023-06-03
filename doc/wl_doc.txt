@@ -64,6 +64,16 @@ $ fg            go back to vim in console
     nmap \rt <Esc>:retab <CR>
 <
 
+在 vim 中呼叫 terminal >
+    :term (Added in Vim 8.1)
+
+    切換視窗: Ctrl + w + jk
+
+    關閉視窗: Ctrl + w + c
+
+    tnoremap <ESC> <C-w>:q!<CR>     exit terminal mode (似乎有 bug, terminal 會異常)
+<
+
 when press \ + Enter, the cursor break context to next line. >
     nmap \<CR>  i<CR><ESC>
 <
@@ -120,7 +130,7 @@ HOTKEY                                       *hotkey*
 -------------- *區塊註解*
 於控制選項(ESC下), 游標移動至要註解的開頭第一個字
 按Ctrl-V, 接著往下選取要註解的區塊
-按大寫I插入. 插入註解符號(如』, //, #)
+按大寫I插入. 插入註解符號(如’, //, #)
 最後, 按Esc, 返回控制選項
 ps. windows環境下, 需先取消預設 hotkey ctrl-v = 貼上 (unmap <C-V> in _vimrc)
 
@@ -168,6 +178,11 @@ On Windows with Gvim
 
 ==============================================================================
 PLUG-IN                                      *plug-in*
+
+-------------- *hex view*
+toggle between hex and text >
+    :hexmode
+<
 
 -------------- *ctags/cscope*
 :!ctags -R
@@ -546,8 +561,8 @@ I set <leader> to ','
 <leader>st      until do done
 <leader>sw      while do done
 <leader>sfu     function
-<leader>se      echo ­e 「\n」
-<leader>sp      printf 「\n」
+<leader>se      echo ­e "\n"
+<leader>sp      printf "\n"
 <leader>hh      syntax help
 
 -------------- *DrawIt*
@@ -589,6 +604,29 @@ Supported Features
    \ra ... \rz  replace text with given brush/register
    \pa ...      like \ra ... \rz, except that blanks are considered
                 to be transparent
+
+-------------- *DirDiff*
+比較兩個資料夾的差異 >
+    :DirDiff folder1 folder2
+<
+
+reflash 兩個資料夾的差異 >
+    :DirDiffUpdate
+<
+
+<leader>dg -    Diff get: maps to :diffget<CR>
+<leader>dp -    Diff put: maps to :diffput<CR>
+<leader>dj -    Diff next: (think j for down)
+<leader>dk -    Diff previous: (think k for up)
+
+
+-------------- *autoformat*
+sytax format the current file >
+    :Autoformat
+<
+
+<leader>a + <sync_word> -       e.g. <leader>a=, align '='
+                                     <leader>a:, align ':'
 
 ==============================================================================
 MISC                                         *misc*

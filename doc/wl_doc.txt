@@ -628,6 +628,75 @@ sytax format the current file >
 <leader>a + <sync_word> -       e.g. <leader>a=, align '='
                                      <leader>a:, align ':'
 
+-------------- *tmux*
+組成元素 >
+    session_0 -> window_0_0
+                    -> pane_0_0_0 (等同一個 terminal)
+                    -> pane_0_0_1
+              -> window_0_1
+
+    session_1 -> window_1_0
+                    -> pane_1_0_0 (等同一個 terminal)
+
+    ps. session 等同一個 remote server,
+        window 等同一個桌面
+        pane 則等同一個 terminal
+<
+
+刪除 tmux server >
+    $ tmux kill-server
+<
+
+Session管理 >
+    # 建立新 session
+    $ tmux
+
+    # list 已存在的 sessions
+    $ tmux ls
+
+    # link 已存在的 sessions, 編號從 tmux ls 獲得
+    $ tmux attach -t <編號>
+
+    # delete 已存在的 sessions, 編號從 tmux ls 獲得
+    $ tmux kill-session -t <name>
+
+    # rename 已存在的 sessions
+    $ tmux rename-session -t <old name> <new name>
+<
+
+prefix-key (default) >
+    # 要先執行完 prefix-key 再按其他指令, 不要一起按
+    ctrl + b (C-B)
+<
+
+
+split window >
+    # 目前 window 垂直分割(產生 a pane)
+    C-B + | (自訂)
+
+    # 目前 window 水平分割(產生 a pane)
+    C-B + - (自訂)
+
+    # 刪除目前的 pane
+    C-B + x
+        or
+    $ exit
+
+<
+
+Panes 之間移動 >
+    C-B h
+    C-B j
+    C-B k
+    C-B l
+<
+
+調整 Pane 的大小 >
+    C-B + 方向鍵
+        or
+    shift + 方向鍵 (自訂)
+<
+
 ==============================================================================
 MISC                                         *misc*
 

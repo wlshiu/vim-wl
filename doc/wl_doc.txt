@@ -464,6 +464,11 @@ ex.
     一樣用 visual mode 選取想要對齊的區域，輸入 \acom or \adec
 
 
+-------------- *NERD-Tree*
+let g:NERDTreeToggle="<F2>"             按 F2 鍵開啟樹狀視圖
+let g:NERDTreeMapActivateNode="<F3>"    使用 F3 尋找樹狀結構中目前開啟的檔案。
+let g:NERDTreeMapPreview="<F4>"         按 F4 查看文件
+
 -------------- *NERD-Commenter*
 在Normal或者Visual 模式下：
 <leader>cA,                 在當前行尾添加註解符，並進入Insert模式
